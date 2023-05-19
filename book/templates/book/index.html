@@ -1,0 +1,24 @@
+{% extends 'book/basic.html' %}
+{% load static %}
+
+{% block title %}Crud Website{% endblock %}
+
+
+{% block body %}
+<div class="container my-3">
+<h1>My Models</h1>
+
+</div>
+
+
+<ul>
+{% for book in mymodels %}
+<!--    <li><a href="">{{ book.name }}&#45;&#45;{{book.email}}</a></li>-->
+{% endfor %}
+</ul>
+
+<!-- detail.html -->
+<h1>{{ book.name }}</h1>
+<p>{{ book.description }}</p>
+
+{% endblock %}

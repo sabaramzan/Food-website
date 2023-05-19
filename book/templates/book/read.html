@@ -1,0 +1,21 @@
+{% extends 'book/basic.html' %}
+{% load static %}
+
+{% block title %}Read{% endblock %}
+
+{% block body %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% for user in users %}
+    Name:{{user.name}}<br/> Email: {{user.email}}<br/> phone:{{user.phone}}
+    <a href="{% url 'delete' user.id  %}">Delete</a>
+    <a href="{% url 'update' user.id  %}">Update</a><br/>
+<br>
+{% endfor %}
+{% endblock %}
